@@ -64,12 +64,10 @@ BACKUP_NAME=$(basename "$BACKUP_FILE_ABS")
 echo "Restoring Portainer data..."
 
 # Restore using a temporary container
-docker run --rm \
+if docker run --rm \
     -v "$PORTAINER_VOLUME":/data \
     -v "$BACKUP_DIR":/backup \
-    alpine sh -c "cd /data && tar xzf /backup/$BACKUP_NAME"
-
-if [ $? -eq 0 ]; then
+    alpine sh -c "cd /data && tar xzf /backup/$BACKUP_NAME"; then
     echo -e "${GREEN}✓ Restore completed successfully${NC}"
     echo ""
     echo "Please restart Portainer to apply the restored data:"

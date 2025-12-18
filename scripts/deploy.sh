@@ -57,16 +57,14 @@ echo "Port: $PORTAINER_PORT"
 echo ""
 
 # Deploy Portainer
-docker run -d \
+if docker run -d \
     -p 8000:8000 \
     -p "$PORTAINER_PORT":9443 \
     --name="$CONTAINER_NAME" \
     --restart=always \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v "$VOLUME_NAME":/data \
-    portainer/portainer-ce:"$VERSION"
-
-if [ $? -eq 0 ]; then
+    portainer/portainer-ce:"$VERSION"; then
     echo -e "${GREEN}✓ Portainer deployed successfully${NC}"
     echo ""
     echo "Access Portainer at: https://localhost:$PORTAINER_PORT"

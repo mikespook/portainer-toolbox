@@ -44,12 +44,10 @@ echo "Destination: $BACKUP_FILE"
 echo ""
 
 # Create backup using a temporary container
-docker run --rm \
+if docker run --rm \
     -v "$PORTAINER_VOLUME":/data \
     -v "$(cd "$BACKUP_DIR" && pwd)":/backup \
-    alpine tar czf "/backup/portainer_backup_${TIMESTAMP}.tar.gz" -C /data .
-
-if [ $? -eq 0 ]; then
+    alpine tar czf "/backup/portainer_backup_${TIMESTAMP}.tar.gz" -C /data .; then
     BACKUP_SIZE=$(du -h "$BACKUP_FILE" | cut -f1)
     echo -e "${GREEN}✓ Backup completed successfully${NC}"
     echo "Backup file: $BACKUP_FILE"

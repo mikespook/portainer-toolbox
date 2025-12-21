@@ -1,0 +1,39 @@
+{
+	"manifest_version": 3,
+	"name": "English to Chinese Translator",
+	"version": "1.0",
+	"description": "Translates English text to Chinese on specific web pages.",
+	"permissions": [
+		"storage",
+		"activeTab",
+		"scripting"
+	],
+	"background": {
+		"scripts": [
+			"background.js"
+		]
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": [
+				"content.js"
+			]
+		}
+	],
+	"action": {
+		"default_popup": "settings.html"
+	},
+	"icons": {
+		"48": "icons/icon-48.png",
+		"96": "icons/icon-96.png"
+	},
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "{3240ea66-e3f7-4e62-a0a3-da21bda347d4}",
+			"strict_min_version": "109.0"
+		}
+	}
+}

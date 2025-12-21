@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Translator Settings</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      width: 300px;
+    }
+    #domain-list {
+      list-style: none;
+      padding: 0;
+    }
+    #domain-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px;
+      border-bottom: 1px solid #ccc;
+    }
+    #add-domain-container {
+      display: flex;
+      margin-top: 10px;
+    }
+    #new-domain {
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Translator Settings</h1>
+  <h2>Active Domains</h2>
+  <ul id="domain-list"></ul>
+  <div id="add-domain-container">
+    <input type="text" id="new-domain" placeholder="example.com">
+    <button id="add-domain">Add</button>
+  </div>
+  <script src="settings.js"></script>
+</body>
+</html>

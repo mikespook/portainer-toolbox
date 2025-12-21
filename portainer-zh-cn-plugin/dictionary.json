@@ -1,0 +1,21 @@
+{
+	"text": {
+		"Unable to login": "无法登录",
+		"Log in to your account": "登录您的账户",
+		"Welcome back! Please enter your details": "欢迎访问！请输入登录信息",
+		"Login with Microsoft": "使用微软账户登录",
+		"Use internal authentication": "使用内置身份验证",
+		"Authentication in progress": "正在进行身份验证",
+		"Unable to login via OAuth": "无法通过 OAuth 登录",
+		"Invalid OAuth state, try again.": "异常的 OAuth 状态，请重试。",
+		"Username": "用户名",
+		"Password": "密码",
+		"Login": "登录"
+	},
+	"placeholder": {
+		"Enter your username": "输入用户名",
+		"Enter your password": "输入密码"
+	},
+	"title": {},
+	"alt": {}
+}
